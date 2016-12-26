@@ -1,0 +1,8 @@
+#playerList{ position: relative;}
+#playerList .container{ padding:30px 0; }
+.eachplayer{ overflow:hidden; text-align:center;background:#FFF;border-radius:10px; color:#333;padding:10px; margin:10px;box-shadow: 2px 2px 21px #000; cursor: pointer; position:relative;z-index: 1;}
+.eachplayer:hover{ border: 1px solid #000;}
+.eachplayer img{width:80%;border-radius:50%;}
+.eachplayer ul{padding: 0; margin:10px 0;}
+.eachplayer ul li{border-bottom: 1px solid #CCC;}
+.overlaybox{background-color:#000; opacity: 0.5; height: 100%; width:100%; position:absolute; top:0;}

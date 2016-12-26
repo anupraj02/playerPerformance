@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body,html{height:100%;width:100%}
+body{font-family:Merriweather,'Helvetica Neue',Arial,sans-serif;webkit-tap-highlight-color:#222;min-height:auto;background:url(assets/images/header2.jpg) fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;color:#fff}
+p{font-size:16px;line-height:1.5;margin-bottom:20px}
+header .header-content .header-content-inner h1{font-size:50px;font-weight: 700; text-transform: uppercase;margin:0 auto;}
+header .header-content .header-content-inner{max-width: 1000px; margin-left: auto; margin-right: auto;}
+header,header .header-content{position:relative;width:100%;text-align:center}
+header{min-height:100%}header .header-content{position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);padding:0 50px}
+header .header-content .header-content-inner{max-width:1000px;margin-left:auto;margin-right:auto}
+header .header-content .header-content-inner h1{font-size:50px}
+header .header-content .header-content-inner p{font-size:18px;max-width:80%;margin-left:auto;margin-right:auto; color:#FFFFFF;}
