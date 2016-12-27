@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 export interface Player{
     id:number;
     runScored: number;
+    highest: number;
     inn: number;
     pname: string;
     company: string;
@@ -35,6 +36,7 @@ var PLAYER: Player [] = [
     "matches": 11,
     "inn": 6,
     "runScored": 205,
+    "highest":45,
     "ballfaced": 104,
     "overs": 9,
     "maidens": 2,
@@ -49,6 +51,7 @@ var PLAYER: Player [] = [
     "matches": 14,
     "inn": 7,
     "runScored": 50,
+    "highest":15,
     "ballfaced": 287,
     "overs": 19,
     "maidens": 2,
@@ -63,6 +66,7 @@ var PLAYER: Player [] = [
     "matches": 10,
     "inn": 10,
     "runScored": 195,
+    "highest":65,
     "ballfaced": 65,
     "overs": 11,
     "maidens": 3,
@@ -77,6 +81,7 @@ var PLAYER: Player [] = [
     "matches": 12,
     "inn": 6,
     "runScored": 189,
+    "highest":69,
     "ballfaced": 81,
     "overs": 13,
     "maidens": 6,
@@ -91,6 +96,7 @@ var PLAYER: Player [] = [
     "matches": 10,
     "inn": 6,
     "runScored": 72,
+    "highest":12,
     "ballfaced": 167,
     "overs": 9,
     "maidens": 2,
@@ -105,11 +111,27 @@ var PLAYER: Player [] = [
     "matches": 15,
     "inn": 5,
     "runScored": 178,
+    "highest":23,
     "ballfaced": 265,
     "overs": 8,
     "maidens": 3,
     "runsGiven": 36,
     "wickets": 0,
+    "about": "Occaecat sunt do ad tempor. Dolore eiusmod pariatur culpa laboris id adipisicing amet esse consequat consectetur dolore aliqua proident. Eiusmod anim sint id proident non in voluptate aliqua cillum reprehenderit exercitation reprehenderit eu voluptate.\r\n"
+  },
+  {
+    "id":7,
+    "pname": "Anup Raj",
+    "company": "SULTRAXIN",
+    "matches": 15,
+    "inn": 10,
+    "runScored": 999,
+    "highest":124,
+    "ballfaced": 500,
+    "overs": 8,
+    "maidens": 3,
+    "runsGiven": 36,
+    "wickets": 10,
     "about": "Occaecat sunt do ad tempor. Dolore eiusmod pariatur culpa laboris id adipisicing amet esse consequat consectetur dolore aliqua proident. Eiusmod anim sint id proident non in voluptate aliqua cillum reprehenderit exercitation reprehenderit eu voluptate.\r\n"
   }
 ]

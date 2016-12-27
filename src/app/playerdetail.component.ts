@@ -16,16 +16,12 @@ export interface PlayerModal{
 }
 
 @Component({
-  selector: 'player-list',
-  templateUrl: './playerlist.component.html',
-  styleUrls: ['./playerlist.component.css']
+  selector: 'player-detail',
+  templateUrl: './playerdetail.component.html',
+  styleUrls: ['./playerdetail.component.css']
 })
 
-export class PlayerListComponent {
-    @Input() 'playerList';
-    
+export class PlayerDetailComponent {
     currentPlayerModal:PlayerModal;
-    showPlayerDetail(item){
-      this.currentPlayerModal = item;
-    }
+    @Input() currentPlayer;
 }

@@ -6,12 +6,14 @@ import {ModalModule} from "ng2-modal";
 
 import { AppComponent } from './app.component';
 import { PlayerListComponent } from './playerlist.component';
+import { PlayerDetailComponent } from './playerdetail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerListComponent
+    PlayerListComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,

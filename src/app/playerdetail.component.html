@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="col-lg-8">
+        <h2>{{currentPlayer.pname}}</h2>
+        <ul class="player-basic">
+            <li class="row"><span class="col-lg-12">{{currentPlayer.about}}</span></li>
+            <li class="row"><span class="col-lg-3">Age</span><span class="col-lg-9">25</span></li>
+            <li class="row"><span class="col-lg-3">Role</span><span class="col-lg-9">All Rounder</span></li>
+            <li class="row"><span class="col-lg-3">Bats</span><span class="col-lg-9">Right Handed</span></li>
+            <li class="row"><span class="col-lg-3">Bowls</span><span class="col-lg-9">Right-arm medium-pace</span></li>
+            <li class="row"><span class="col-lg-3">Nationality</span><span class="col-lg-9">Indian</span></li>
+        </ul>
+        <div class="player-stat-container">
+            <h3>Statistics</h3>
+            <div class="each-stat">
+                <h3>Runs</h3>
+                <span>{{currentPlayer.runScored}}</span>
+            </div>
+            <div class="each-stat">
+                <h3>Wickets</h3>
+                <span>{{currentPlayer.wickets}}</span>
+            </div>
+            <div class="each-stat">
+                <h3>Highest</h3>
+                <span>{{currentPlayer.highest}}</span>
+            </div>
+            <div class="each-stat">
+                <h3>Avg.</h3>
+                <span>{{currentPlayer.runScored/currentPlayer.inn | number:'2.1-2' }}</span>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Matches</td>
+                    <td>Innings</td>
+                    <td>Runs</td>
+                    <td>Strike Rate</td>
+                    <td>Overs</td>
+                    <td>Maidens</td>
+                    <td>Wickets</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.highest}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-4">
+        <img src="assets/images/playerfull.png"/>
+    </div>
+</div>

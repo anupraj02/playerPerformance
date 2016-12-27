@@ -1,0 +1,7 @@
+.container{ padding:30px 0; position:relative; z-index: 1; }
+ul.player-basic{ padding: 0;list-style: none;float: left;width:100%}
+ul.player-basic li{float: left; width:100%}
+.player-stat-container{ width:100%; float: left; }
+.player-stat-container .each-stat{border: 1px solid #CCC; text-align: center;width: 23%;margin-right:2%; margin-bottom:5px; float: left; font-family: 'Orbitron', sans-serif;}
+.player-stat-container .each-stat h3{ text-transform: uppercase; background:#CECECE; margin: 0; background: #4682B4 }
+.player-stat-container .each-stat span{ font-size: 26px; font-weight: bold; }

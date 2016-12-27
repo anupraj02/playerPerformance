@@ -1,6 +1,6 @@
 <section id="playerList">
     <div class="container" id="player-container">
-        <div class="col-lg-2 eachplayer"  *ngFor="let item of playerList" (click)="showPlayerDetail(item);myModal1.open()" >
+        <div class="col-lg-2 eachplayer"  *ngFor="let item of playerList" (click)="showPlayerDetail(item)" >
             <img src="assets/images/avatar_male.jpg"/>
             <div>
                 <ul>
@@ -13,7 +13,9 @@
                 </ul>
             </div>
         </div>
-        <div *ngIf="currentPlayerModal" #myModal1>{{currentPlayerModal.pname}}ss</div>
     </div>
+    <player-detail id="playerdetail-container" *ngIf="currentPlayerModal" [currentPlayer]='currentPlayerModal'></player-detail>
+    
+    
     <div class="overlaybox"></div>
 </section>
