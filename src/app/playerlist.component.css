@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
-#playerList{ position: relative;}
+#playerList{ position: relative; overflow: hidden;}
 #playerList .container{ padding:30px 0; position:relative; z-index: 1; }
 .eachplayer{ overflow:hidden; text-align:center;background:#FFF;border-radius:10px; color:#333;padding:10px; margin:10px;box-shadow: 2px 2px 21px #000; position:relative;z-index: 1;}
 .eachplayer:hover{ border: 1px solid #000;}
@@ -12,8 +12,6 @@
 .caphodler .capribbon span.glyphicon{font-size:20px;}
 .eachplayer .caphodler .capribbon.orangecap{background:#FFA500;}
 .eachplayer .caphodler .capribbon.purplecap{background:#800080;}
-.eachplayer .addoverlay{opacity: 0.7;}
-.eachplayer span.addplayer{ position: absolute; left:25%; top: 35%; color: #FFFFFF; font-size:8em; }
 .eachplayer .eachplyoverlay{opacity: 0.7;top:100%; transition:0.5s ease; }
 .eachplayer:hover .eachplyoverlay{top:0;}
 .eachplayer .eachplyactions{ text-align: center; width:100%; position:absolute; left:0; font-size:3em; top:100%; transition:0.5s ease;}

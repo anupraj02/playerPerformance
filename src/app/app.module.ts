@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { Player } from './player.interface';
 import { PlayerListComponent } from './playerlist.component';
 import { PlayerDetailComponent } from './playerdetail.component';
+import { PlayerAddComponent } from './playeradd.component';
 import { orangeCappedDirective } from './orangecap.directive';
 import { orangeCapPipe } from './orangecap.pipes';
 import { purpleCapPipe } from './purplecap.pipes';
@@ -19,6 +20,7 @@ import { playerServices } from './player.services';
     AppComponent,
     PlayerListComponent,
     PlayerDetailComponent,
+    PlayerAddComponent,
     orangeCappedDirective,
     orangeCapPipe,
     purpleCapPipe

@@ -1,0 +1,48 @@
+<div class="addplayercontainer col-lg-8" [class.isaddshow]="addshow" >
+    <div class="pull-left addico"><span class="glyphicon glyphicon-plus addplayer" [class.closeshow]="addshow" (click)='addNewPlayer()'></span></div>
+    <div class="player-form-container col-lg-12">
+        <form>
+            <div class="form-group col-lg-6 row">
+                <label for="newPlayerName">Player Name</label>
+                <input type="text" class="form-control" id="newPlayerName" placeholder="Player Name">
+            </div>
+            <div class="form-group col-lg-6 pull-right row">
+                <label for="newPlayerNationality">Player Name</label>
+                <input type="text" class="form-control" id="newPlayerNationality" placeholder="Nationality">
+            </div>
+            <div class="form-group col-lg-6 row">
+                <label for="newPlayerAge">Age</label>
+                <input type="number" min="0" max="100" class="form-control" id="newPlayerAge" placeholder="Age">
+            </div>
+            <div class="form-group col-lg-6 pull-right row">
+                <label for="newPlayerRole">Role</label>
+                <input type="text" class="form-control" id="newPlayerRole" placeholder="Role">
+            </div>
+            <div class="form-group col-lg-6 row">
+                <label for="newPlayerBatting">Batting Style</label>
+                <select class="form-control" id="newPlayerBatting">
+                    <option value="Right Handed">Right Handed</option>
+                    <option value="Left Handed">Left Handed</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-6 pull-right row">
+                <label for="newPlayerBowling">Bowling Style</label>
+                <select class="form-control" id="newPlayerBowling">
+                    <option value="-">Doesnot Bowl</option>
+                    <option value="Right-arm fast">Right-arm fast</option>
+                    <option value="Left-arm fast">Left-arm fast</option>
+                    <option value="Right-arm medium">Right-arm medium</option>
+                    <option value="Left-arm medium">Left-arm medium</option>
+                    <option value="Right-arm spin">Right-arm spin</option>
+                    <option value="Left-arm spin">Left-arm spin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="newPlayerAbout">About Player</label>
+                <textarea class="form-control" id="newPlayerAbout" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+    <div class="addoverlay"></div>
+</div>

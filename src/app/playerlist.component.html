@@ -23,23 +23,8 @@
                 <span class="glyphicon glyphicon-trash" (click)="deletePlayer(item)"></span>
             </div>
         </div>
-        <div class="col-lg-2 eachplayer" (click)='addNewPlayer()'>
-            <img src="assets/images/avatar_male.jpg"/>
-            <div>
-                <ul>
-                    <li class="text-center"><b>XXXXXX</b></li>
-                    <li><span class="pull-left">Matches</span><span class="pull-right">-</span></li>
-                    <li><span class="pull-left">Innings</span><span class="pull-right">-</span></li>
-                    <li><span class="pull-left">Rus Scored</span><span class="pull-right">-</span></li>
-                    <li><span class="pull-left">Wickets</span><span class="pull-right">-</span></li>
-                    <li><span class="pull-left">Batting Avg</span><span class="pull-right">-</span></li>
-                </ul>
-            </div>   
-            <div class="overlaybox addoverlay"></div>
-            <span class="glyphicon glyphicon-plus addplayer"></span>
-        </div>
     </div>
-    
+    <player-add id="addplayer"></player-add>
     <player-detail id="playerdetail-container" *ngIf="currentPlayerModal" [currentPlayer]='currentPlayerModal'></player-detail>
     <div class="overlaybox"></div>
 </section>
