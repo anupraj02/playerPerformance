@@ -42,13 +42,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
-                    <td>{{currentPlayer.highest}}</td>
+                    <td>{{currentPlayer.matches}}</td>
+                    <td>{{currentPlayer.inn}}</td>
+                    <td>{{currentPlayer.runScored}}</td>
+                    <td>{{(currentPlayer.runScored/currentPlayer.ballfaced)*100 | number:'2.1-2' }}</td>
+                    <td>{{currentPlayer.overs}}</td>
+                    <td>{{currentPlayer.maidens}}</td>
+                    <td>{{currentPlayer.wickets}}</td>
                 </tr>
             </tbody>
         </table>

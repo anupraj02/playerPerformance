@@ -1,19 +1,5 @@
 import { Component,Input } from '@angular/core';
-
-export interface PlayerModal{
-    id:number;
-    runScored: number;
-    inn: number;
-    pname: string;
-    company: string;
-    about: string;
-    matches: number;
-    ballfaced: number;
-    overs: number;
-    wickets: number;
-    maidens: number;
-    runsGiven: number;
-}
+import { Player } from './player.interface';
 
 @Component({
   selector: 'player-detail',
@@ -22,6 +8,6 @@ export interface PlayerModal{
 })
 
 export class PlayerDetailComponent {
-    currentPlayerModal:PlayerModal;
+    currentPlayerModal:Player;
     @Input() currentPlayer;
 }

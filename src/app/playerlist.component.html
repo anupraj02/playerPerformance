@@ -1,6 +1,6 @@
 <section id="playerList">
     <div class="container" id="player-container">
-        <div class="col-lg-2 eachplayer"  *ngFor="let item of playerList" (click)="showPlayerDetail(item)" >
+        <div class="col-lg-2 eachplayer"  *ngFor="let item of playerList" >
             <img src="assets/images/avatar_male.jpg"/>
             <div>
                 <ul>
@@ -12,10 +12,34 @@
                     <li><span class="pull-left">Batting Avg</span><span class="pull-right">{{(item.runScored/item.inn) | number:'2.1-2'}}</span></li>
                 </ul>
             </div>
+            <div class="caphodler">
+                <!--<div class="capribbon orangecap" *ngIf="currentPlayerModal" [arCapped]='item'><span class="glyphicon glyphicon-star"></span></div></div>-->
+                <div class="capribbon orangecap" *ngIf="playerList | findOrangeCap: item.id"><span class="glyphicon glyphicon-star"></span></div>
+                <div class="capribbon purplecap" *ngIf="playerList | findPurpleCap: item.id"><span class="glyphicon glyphicon-star"></span></div>
+            </div>
+            <div class="overlaybox eachplyoverlay"></div>
+            <div class="eachplyactions">
+                <span class="glyphicon glyphicon-eye-open" (click)="showPlayerDetail(item)"></span>
+                <span class="glyphicon glyphicon-trash" (click)="deletePlayer(item)"></span>
+            </div>
+        </div>
+        <div class="col-lg-2 eachplayer" (click)='addNewPlayer()'>
+            <img src="assets/images/avatar_male.jpg"/>
+            <div>
+                <ul>
+                    <li class="text-center"><b>XXXXXX</b></li>
+                    <li><span class="pull-left">Matches</span><span class="pull-right">-</span></li>
+                    <li><span class="pull-left">Innings</span><span class="pull-right">-</span></li>
+                    <li><span class="pull-left">Rus Scored</span><span class="pull-right">-</span></li>
+                    <li><span class="pull-left">Wickets</span><span class="pull-right">-</span></li>
+                    <li><span class="pull-left">Batting Avg</span><span class="pull-right">-</span></li>
+                </ul>
+            </div>   
+            <div class="overlaybox addoverlay"></div>
+            <span class="glyphicon glyphicon-plus addplayer"></span>
         </div>
     </div>
+    
     <player-detail id="playerdetail-container" *ngIf="currentPlayerModal" [currentPlayer]='currentPlayerModal'></player-detail>
-    
-    
     <div class="overlaybox"></div>
 </section>

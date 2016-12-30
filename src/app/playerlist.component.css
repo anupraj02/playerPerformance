@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 #playerList{ position: relative;}
 #playerList .container{ padding:30px 0; position:relative; z-index: 1; }
-.eachplayer{ overflow:hidden; text-align:center;background:#FFF;border-radius:10px; color:#333;padding:10px; margin:10px;box-shadow: 2px 2px 21px #000; cursor: pointer; position:relative;z-index: 1;}
+.eachplayer{ overflow:hidden; text-align:center;background:#FFF;border-radius:10px; color:#333;padding:10px; margin:10px;box-shadow: 2px 2px 21px #000; position:relative;z-index: 1;}
 .eachplayer:hover{ border: 1px solid #000;}
 .eachplayer img{width:80%;border-radius:50%;}
 .eachplayer ul{padding: 0; margin:10px 0; list-style: none;float: left;}
 .eachplayer ul li{border-bottom: 1px solid #CCC;float: left; width:100%}
-.overlaybox{background-color:#000; opacity: 0.5; height: 100%; width:100%; position:absolute; top:0;}
+.overlaybox{background-color:#000; opacity: 0.5; height: 100%; width:100%; position:absolute; top:0;left:0;}
+.caphodler { width: 85px; height: 88px; overflow: hidden; position: absolute; top: -3px; right: -3px; }
+.caphodler .capribbon { color: #FFF; text-align: center; transform: rotate(45deg); position: relative; padding:1px 0; left: -5px; top: 15px; width: 120px;}
+.caphodler .capribbon span.glyphicon{font-size:20px;}
+.eachplayer .caphodler .capribbon.orangecap{background:#FFA500;}
+.eachplayer .caphodler .capribbon.purplecap{background:#800080;}
+.eachplayer .addoverlay{opacity: 0.7;}
+.eachplayer span.addplayer{ position: absolute; left:25%; top: 35%; color: #FFFFFF; font-size:8em; }
+.eachplayer .eachplyoverlay{opacity: 0.7;top:100%; transition:0.5s ease; }
+.eachplayer:hover .eachplyoverlay{top:0;}
+.eachplayer .eachplyactions{ text-align: center; width:100%; position:absolute; left:0; font-size:3em; top:100%; transition:0.5s ease;}
+.eachplayer:hover .eachplyactions{top:45%;}
+.eachplayer .eachplyactions span {margin:0 5px; cursor: pointer; color: #FFFFFF; }
+.eachplayer .eachplyactions span:hover {color: #FFA500; }
