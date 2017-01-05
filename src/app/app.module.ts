@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {ModalModule} from "ng2-modal";
 
@@ -13,6 +13,8 @@ import { orangeCappedDirective } from './orangecap.directive';
 import { orangeCapPipe } from './orangecap.pipes';
 import { purpleCapPipe } from './purplecap.pipes';
 import { playerServices } from './player.services';
+import { battingStrikeRate } from './battingstrikerate.pipes';
+import { battingAverage } from './battingavg.pipes';
 
 
 @NgModule({
@@ -23,11 +25,13 @@ import { playerServices } from './player.services';
     PlayerAddComponent,
     orangeCappedDirective,
     orangeCapPipe,
-    purpleCapPipe
+    purpleCapPipe,
+    battingStrikeRate,
+    battingAverage
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     ModalModule
   ],

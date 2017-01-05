@@ -1,33 +1,36 @@
 <div class="addplayercontainer col-lg-8" [class.isaddshow]="addshow" >
     <div class="pull-left addico"><span class="glyphicon glyphicon-plus addplayer" [class.closeshow]="addshow" (click)='addNewPlayer()'></span></div>
     <div class="player-form-container col-lg-12">
-        <form>
+        <form
+            [formGroup]="form"
+            (ngSubmit)="submitNewPlayer(form.value)"
+            >
             <div class="form-group col-lg-6 row">
                 <label for="newPlayerName">Player Name</label>
-                <input type="text" class="form-control" id="newPlayerName" placeholder="Player Name">
+                <input type="text" class="form-control" name="newPlayerName" id="newPlayerName" placeholder="Player Name" formControlName="newPlayerName" [class.frmerror]="form.controls.newPlayerName.errors?.pattern" >
             </div>
             <div class="form-group col-lg-6 pull-right row">
-                <label for="newPlayerNationality">Player Name</label>
-                <input type="text" class="form-control" id="newPlayerNationality" placeholder="Nationality">
+                <label for="newPlayerNationality">Nationality</label>
+                <input type="text" class="form-control" name="newPlayerNationality" id="newPlayerNationality" placeholder="Nationality" formControlName="newPlayerNationality" [class.frmerror]="form.controls.newPlayerNationality.errors?.pattern">
             </div>
             <div class="form-group col-lg-6 row">
                 <label for="newPlayerAge">Age</label>
-                <input type="number" min="0" max="100" class="form-control" id="newPlayerAge" placeholder="Age">
+                <input type="number" min="1" max="100" class="form-control" id="newPlayerAge" placeholder="Age" formControlName="newPlayerAge" [class.frmerror]="form.controls.newPlayerAge.errors?.age">
             </div>
             <div class="form-group col-lg-6 pull-right row">
                 <label for="newPlayerRole">Role</label>
-                <input type="text" class="form-control" id="newPlayerRole" placeholder="Role">
+                <input type="text" class="form-control" id="newPlayerRole" placeholder="Role" formControlName="newPlayerRole" [class.frmerror]="form.controls.newPlayerRole.errors?.pattern">
             </div>
             <div class="form-group col-lg-6 row">
                 <label for="newPlayerBatting">Batting Style</label>
-                <select class="form-control" id="newPlayerBatting">
+                <select class="form-control" id="newPlayerBatting" formControlName="newPlayerBatting">
                     <option value="Right Handed">Right Handed</option>
                     <option value="Left Handed">Left Handed</option>
                 </select>
             </div>
             <div class="form-group col-lg-6 pull-right row">
                 <label for="newPlayerBowling">Bowling Style</label>
-                <select class="form-control" id="newPlayerBowling">
+                <select class="form-control" id="newPlayerBowling" formControlName="newPlayerBowling">
                     <option value="-">Doesnot Bowl</option>
                     <option value="Right-arm fast">Right-arm fast</option>
                     <option value="Left-arm fast">Left-arm fast</option>
@@ -39,9 +42,9 @@
             </div>
             <div class="form-group">
                 <label for="newPlayerAbout">About Player</label>
-                <textarea class="form-control" id="newPlayerAbout" rows="3"></textarea>
+                <textarea class="form-control" id="newPlayerAbout" rows="3" placeholder="Enter a brief information about the player" formControlName="newPlayerAbout"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
             </form>
     </div>
     <div class="addoverlay"></div>

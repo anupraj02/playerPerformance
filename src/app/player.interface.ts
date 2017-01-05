@@ -12,4 +12,9 @@ export interface Player{
     wickets: number;
     maidens: number;
     runsGiven: number;
+    age: number,
+    nationality: string,
+    role: string,
+    batstyle: string,
+    bowlstyle: string
 }

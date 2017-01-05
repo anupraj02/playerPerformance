@@ -33,5 +33,4 @@ export class AppComponent {
    }
 }
 
-
 var PLAYER: Player [] = [];

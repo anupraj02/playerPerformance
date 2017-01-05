@@ -3,11 +3,11 @@
         <h2>{{currentPlayer.pname}}</h2>
         <ul class="player-basic">
             <li class="row"><span class="col-lg-12">{{currentPlayer.about}}</span></li>
-            <li class="row"><span class="col-lg-3">Age</span><span class="col-lg-9">25</span></li>
-            <li class="row"><span class="col-lg-3">Role</span><span class="col-lg-9">All Rounder</span></li>
-            <li class="row"><span class="col-lg-3">Bats</span><span class="col-lg-9">Right Handed</span></li>
-            <li class="row"><span class="col-lg-3">Bowls</span><span class="col-lg-9">Right-arm medium-pace</span></li>
-            <li class="row"><span class="col-lg-3">Nationality</span><span class="col-lg-9">Indian</span></li>
+            <li class="row"><span class="col-lg-3">Age</span><span class="col-lg-9">{{currentPlayer.age}}</span></li>
+            <li class="row"><span class="col-lg-3">Role</span><span class="col-lg-9">{{currentPlayer.role}}</span></li>
+            <li class="row"><span class="col-lg-3">Bats</span><span class="col-lg-9">{{currentPlayer.batstyle}}</span></li>
+            <li class="row"><span class="col-lg-3">Bowls</span><span class="col-lg-9">{{currentPlayer.bowlstyle}}</span></li>
+            <li class="row"><span class="col-lg-3">Nationality</span><span class="col-lg-9">{{currentPlayer.nationality}}</span></li>
         </ul>
         <div class="player-stat-container">
             <h3>Statistics</h3>
@@ -25,7 +25,8 @@
             </div>
             <div class="each-stat">
                 <h3>Avg.</h3>
-                <span>{{currentPlayer.runScored/currentPlayer.inn | number:'2.1-2' }}</span>
+                <span *ngIf="currentPlayer.inn > 0">{{currentPlayer.runScored | calcBattingAvg:currentPlayer.inn | number:'2.1-2' }}</span>
+                <span *ngIf="currentPlayer.inn <= 0">-</span>
             </div>
         </div>
         <table class="table">
@@ -45,7 +46,7 @@
                     <td>{{currentPlayer.matches}}</td>
                     <td>{{currentPlayer.inn}}</td>
                     <td>{{currentPlayer.runScored}}</td>
-                    <td>{{(currentPlayer.runScored/currentPlayer.ballfaced)*100 | number:'2.1-2' }}</td>
+                    <td>{{currentPlayer.runScored | calcBattingStrikeRate:currentPlayer.ballfaced | number:'2.1-2' }}</td>
                     <td>{{currentPlayer.overs}}</td>
                     <td>{{currentPlayer.maidens}}</td>
                     <td>{{currentPlayer.wickets}}</td>

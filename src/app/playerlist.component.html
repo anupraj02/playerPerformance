@@ -9,7 +9,11 @@
                     <li><span class="pull-left">Innings</span><span class="pull-right">{{item.inn}}</span></li>
                     <li><span class="pull-left">Rus Scored</span><span class="pull-right">{{item.runScored}}</span></li>
                     <li><span class="pull-left">Wickets</span><span class="pull-right">{{item.wickets}}</span></li>
-                    <li><span class="pull-left">Batting Avg</span><span class="pull-right">{{(item.runScored/item.inn) | number:'2.1-2'}}</span></li>
+                    <li>
+                        <span class="pull-left">Batting Avg</span>
+                        <span class="pull-right" *ngIf="item.inn > 0" >{{item.runScored | calcBattingAvg:item.inn | number:'2.1-2'}}</span>
+                        <span class="pull-right" *ngIf="item.inn <= 0" >-</span>
+                    </li>
                 </ul>
             </div>
             <div class="caphodler">

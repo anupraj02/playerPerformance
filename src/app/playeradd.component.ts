@@ -1,6 +1,7 @@
-import { Component,Input,Directive,HostBinding } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { Player } from './player.interface';
 import { playerServices } from './player.services';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'player-add',
@@ -10,25 +11,75 @@ import { playerServices } from './player.services';
 
 
 export class PlayerAddComponent {
-    constructor(private _playerServices: playerServices){}
+    form ;
     addshow = false;
+    constructor(private _playerServices: playerServices){}
+
+    ngOnInit(){
+      this.form = new FormGroup({
+        newPlayerName: new FormControl('',Validators.compose([
+          Validators.required,
+          Validators.pattern('[\\w\\-\\s\\/]+')
+        ])),
+        newPlayerNationality: new FormControl('',Validators.compose([
+          Validators.required,
+          Validators.pattern('[\\w\\-\\s\\/]+')
+        ])),
+        newPlayerAge: new FormControl('',this.ageValidator),
+        newPlayerRole: new FormControl('',Validators.compose([
+          Validators.required,
+          Validators.pattern('[\\w\\-\\s\\/]+')
+        ])),
+        newPlayerBatting: new FormControl('Right Handed',Validators.compose([
+          Validators.required,
+          Validators.pattern('[\\w\\-\\s\\/]+')
+        ])),
+        newPlayerBowling: new FormControl('-',Validators.compose([
+          Validators.required,
+          Validators.pattern('[\\w\\-\\s\\/]+')
+        ])),
+        newPlayerAbout: new FormControl('')
+      });
+    }
+
+    ageValidator(control){
+      let age = parseInt(control.value);
+      let minVal = 1;
+      let maxVal = 100;
+      if(age>=minVal && age<=maxVal){
+        return null
+      }else{
+        return {'age':true};
+      }
+    }
+    
     addNewPlayer(){
         this.addshow = !this.addshow;
+    }
+    submitNewPlayer(fromValues):void{
       let newPlay = {
-          "id":1,
-          "pname": "Johnson",
-          "company": "BLANET",
-          "matches": 11,
-          "inn": 6,
-          "runScored": 123,
-          "highest":45,
-          "ballfaced": 104,
-          "overs": 9,
-          "maidens": 2,
-          "runsGiven": 93,
-          "wickets": 8,
-          "about": "Velit laborum consequat est anim veniam duis. Sunt proident aute voluptate ullamco aute sunt ea ut voluptate minim. Consectetur incididunt commodo excepteur ipsum voluptate veniam aliquip duis qui. Dolor deserunt sint Lorem aliqua deserunt pariatur cupidatat veniam. Lorem ex quis fugiat et laboris consequat ad.\r\n"
+          "id":0,
+          "pname": fromValues.newPlayerName,
+          "age": fromValues.newPlayerAge,
+          "nationality": fromValues.newPlayerNationality,
+          "role": fromValues.newPlayerRole,
+          "batstyle": fromValues.newPlayerBatting,
+          "bowlstyle": fromValues.newPlayerBowling,
+          "company": "",
+          "matches": 0,
+          "inn": 0,
+          "runScored": 0,
+          "highest":0,
+          "ballfaced": 0,
+          "overs": 0,
+          "maidens": 0,
+          "runsGiven": 0,
+          "wickets": 0,
+          "about": fromValues.newPlayerAbout
         }
-      this._playerServices.addPlayer(newPlay);
+        
+        this._playerServices.addPlayer(newPlay);
+        this.addshow = !this.addshow;
+        this.ngOnInit();
     }
 }
